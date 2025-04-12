@@ -53,7 +53,7 @@ weather-dashboard/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/weather-dashboard.git
+git clone https://github.com/dkc2006/real-time-weather-dashboard.git
 cd weather-dashboard
 ```
 
