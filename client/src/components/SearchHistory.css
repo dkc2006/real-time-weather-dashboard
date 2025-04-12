@@ -1,0 +1,60 @@
+.search-history {
+    margin: 15px 0;
+  }
+  
+  .search-history h3 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+  }
+  
+  .history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .history-item {
+    margin: 0;
+  }
+  
+  .history-button {
+    background-color: var(--history-item-bg);
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    transition: background-color 0.2s;
+  }
+  
+  .history-button:hover {
+    background-color: var(--history-item-hover);
+  }
+  
+  .history-city {
+    font-weight: 500;
+  }
+  
+  .history-time {
+    color: var(--muted-text);
+    font-size: 0.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    .history-list {
+      flex-direction: column;
+    }
+    
+    .history-button {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }

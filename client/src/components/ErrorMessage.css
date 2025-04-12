@@ -1,0 +1,13 @@
+.error-message {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--error-border);
+  font-size: 1rem;
+}
+
+.error-message p {
+  margin: 0;
+}

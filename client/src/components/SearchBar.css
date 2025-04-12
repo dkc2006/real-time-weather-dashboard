@@ -1,0 +1,112 @@
+.search-bar {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-bar form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input-container {
+  position: relative;
+  flex: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.search-input:focus {
+  border-color: var(--input-focus);
+  outline: none;
+}
+
+.search-button {
+  padding: 12px 20px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: var(--button-hover);
+}
+
+.search-loading-indicator {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--muted-text);
+  border-radius: 50%;
+  border-top-color: var(--button-bg);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.suggestion-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: 0 0 5px 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color);
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: var(--section-bg);
+}
+
+.suggestion-city {
+  font-weight: 500;
+}
+
+.suggestion-country {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+}
+
+@media (max-width: 480px) {
+  .search-bar form {
+    flex-direction: column;
+  }
+  
+  .search-button {
+    width: 100%;
+  }
+}
