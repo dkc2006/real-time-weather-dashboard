@@ -6,6 +6,10 @@ A real-time weather dashboard that allows users to view current weather conditio
 
 - Search for weather data by city name
 - Real-time weather information including temperature, humidity, wind speed, etc.
+- City name autocomplete for easier searching
+- 5-day weather forecast
+- Dark/Light theme toggle
+- Search history saved in localStorage
 - Clean and responsive user interface
 - Error handling for invalid cities and network issues
 
@@ -13,17 +17,27 @@ A real-time weather dashboard that allows users to view current weather conditio
 
 ```
 weather-dashboard/
-├── client/ # React Frontend
+├── client/                    # React Frontend
+│   ├── public/
 │   ├── src/
-│   │   ├── components/ # WeatherCard, SearchBar, ErrorMessage
-│   │   ├── App.js
-│   │   └── index.js
+│   │   ├── components/
+│   │   │   ├── ErrorMessage.jsx      # Error message display component
+│   │   │   ├── ForecastSection.jsx   # 5-day forecast component
+│   │   │   ├── SearchBar.jsx         # Search bar with autocomplete
+│   │   │   ├── SearchHistory.jsx     # Recent searches component
+│   │   │   ├── ThemeToggle.jsx       # Dark/light mode toggle
+│   │   │   └── WeatherCard.jsx       # Current weather display
+│   │   ├── App.css                  # Main app styles
+│   │   ├── App.js                   # Main application component
+│   │   ├── index.css                # Global styles
+│   │   └── index.js                 # React entry point
 │   └── package.json
-├── server/ # Node.js Backend
+├── server/                    # Node.js Backend
 │   ├── routes/
-│   │   └── weather.js # /weather endpoint logic
-│   ├── server.js
+│   │   └── weather.js         # API endpoints for weather data
+│   ├── server.js              # Express server configuration
 │   └── package.json
+├── .env                       # Environment variables (not in git)
 ├── .gitignore
 └── README.md
 ```
@@ -89,9 +103,34 @@ The application should now be running:
 
 ## Usage
 
-1. Enter a city name in the search box
-2. Click the Search button or press Enter
-3. View the current weather conditions for the specified city
+1. Enter a city name in the search box (suggestions will appear as you type)
+2. Click on a suggestion or click the Search button
+3. View the current weather conditions and 5-day forecast for the specified city
+4. Toggle between dark and light modes using the theme switch
+5. Click on a city in your search history to quickly view its weather again
+
+## Bonus Features
+
+### Dark/Light Mode
+
+- Toggle between dark and light themes
+- Theme preference is saved in localStorage
+
+### Search History
+
+- Recent searches are saved locally
+- Click on previous searches to quickly view weather data
+- Shows relative time of searches
+
+### 5-Day Forecast
+
+- View weather predictions for the next 5 days
+- Includes daily high/low temperatures and conditions
+
+### City Autocomplete
+
+- As you type, the app suggests matching cities
+- Select from suggestions for accurate results
 
 ## Technologies Used
 
@@ -99,7 +138,8 @@ The application should now be running:
 
   - React.js
   - Axios for API requests
-  - CSS for styling
+  - CSS for styling with dynamic theming
+  - localStorage for persistent data
 
 - **Backend**:
   - Node.js
@@ -107,6 +147,13 @@ The application should now be running:
   - Axios for API requests
   - dotenv for environment variables
   - cors for handling cross-origin requests
+
+## API Integration
+
+- **OpenWeatherMap API**:
+  - Current Weather Data API
+  - 5 Day / 3 Hour Forecast API
+  - Geocoding API for city suggestions
 
 ## License
 
