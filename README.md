@@ -1,4 +1,4 @@
-# Weather Dashboard
+#  Real Time Weather Dashboard
 
 A real-time weather dashboard that allows users to view current weather conditions for any city using the OpenWeatherMap API.
 
